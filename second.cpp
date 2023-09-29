@@ -11,9 +11,9 @@ using namespace chrono;
 
 int* createArr(long size) {
     int* arr = new int[size];
-    srand(steady_clock::now().time_since_epoch().count()); // инициализация си-стемы псевдослучайных чисел для rand()
+    srand(steady_clock::now().time_since_epoch().count()); // РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃРё-СЃС‚РµРјС‹ РїСЃРµРІРґРѕСЃР»СѓС‡Р°Р№РЅС‹С… С‡РёСЃРµР» РґР»СЏ rand()
     for (int i = 0; i < size; i++) {
-        arr[i] = rand(); // от 0 до 32767
+        arr[i] = rand(); // РѕС‚ 0 РґРѕ 32767
     }
     return arr;
 }
@@ -65,8 +65,8 @@ int main() {
 
     int* fromTrashToGold = createArr(size);
 
-
-    cout << "Значение, которое необходимо найти: ";
+ 
+    cout << "Р—РЅР°С‡РµРЅРёРµ, РєРѕС‚РѕСЂРѕРµ РЅРµРѕР±С…РѕРґРёРјРѕ РЅР°Р№С‚Рё: ";
     cin >> requiredNum;
 
     // enumSearch
@@ -75,7 +75,7 @@ int main() {
     time_point<steady_clock> fin1 = steady_clock::now();
     long dur1 = duration_cast<milliseconds>(fin1 - start1).count();
 
-    // Сортировка для бинарного поиска
+    // РЎРѕСЂС‚РёСЂРѕРІРєР° РґР»СЏ Р±РёРЅР°СЂРЅРѕРіРѕ РїРѕРёСЃРєР°
     time_point<steady_clock> start3 = steady_clock::now();
     sort(fromTrashToGold, fromTrashToGold + size);
     time_point<steady_clock> fin3 = steady_clock::now();
@@ -87,27 +87,28 @@ int main() {
     time_point<steady_clock> fin2 = steady_clock::now();
     long dur2 = duration_cast<milliseconds>(fin2 - start2).count();
 
-    // Результаты
+    // Р РµР·СѓР»СЊС‚Р°С‚С‹
     if (enumResult != -1) {
-        cout << "Позиция значения в enumSearch: " << enumResult << endl;
+        cout << "РџРѕР·РёС†РёСЏ Р·РЅР°С‡РµРЅРёСЏ РІ enumSearch: " << enumResult << endl;
     }
     else {
-        cout << "Значение не найдено в enumSearch" << endl;
+        cout << "Р—РЅР°С‡РµРЅРёРµ РЅРµ РЅР°Р№РґРµРЅРѕ РІ enumSearch" << endl;
     }
 
     if (binaryResult != -1) {
-        cout << "Позиция значения в binarySearch: " << binaryResult << endl;
+        cout << "РџРѕР·РёС†РёСЏ Р·РЅР°С‡РµРЅРёСЏ РІ binarySearch: " << binaryResult << endl;
     }
     else {
-        cout << "Значение не найдено в binarySearch" << endl;
+        cout << "Р—РЅР°С‡РµРЅРёРµ РЅРµ РЅР°Р№РґРµРЅРѕ РІ binarySearch" << endl;
     }
 
-    cout << "Время выполнения enumSearch: " << dur1 << " мс" << endl;
-    cout << "Время выполнения binarySearch: " << dur2 << " мс" << endl;
-    cout << "Время выполнения sort: " << dur3 << " мс" << endl;
+    cout << "Р’СЂРµРјСЏ РІС‹РїРѕР»РЅРµРЅРёСЏ enumSearch: " << dur1 << " РјСЃ" << endl;
+    cout << "Р’СЂРµРјСЏ РІС‹РїРѕР»РЅРµРЅРёСЏ binarySearch: " << dur2 << " РјСЃ" << endl;
+    cout << "Р’СЂРµРјСЏ РІС‹РїРѕР»РЅРµРЅРёСЏ sort: " << dur3 << " РјСЃ" << endl;
 
 
     delete[] fromTrashToGold;
 
     return 0;
 }
+
