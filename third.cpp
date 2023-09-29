@@ -39,7 +39,7 @@ Record generateRandomRecord(int i) {
 
 
 void printRecord(const Record& record) {
-    cout << "Èìÿ: " << record.surname << "    Òåëåôîí: " << record.phone << "    Íîìåð êîìíàòû: " << record.roomNumber << endl;
+    cout << "Ð˜Ð¼Ñ: " << record.surname << "    Ð¢ÐµÐ»ÐµÑ„Ð¾Ð½: " << record.phone << "    ÐÐ¾Ð¼ÐµÑ€ ÐºÐ¾Ð¼Ð½Ð°Ñ‚Ñ‹: " << record.roomNumber << endl;
 }
 
 void shakerSwap(Record records[], int i) {
@@ -96,7 +96,7 @@ void searchRecord(Record records[], int size, string& key) {
         }
     }
     if (!found) {
-        cout << "Çàïèñü íå íàéäåíà" << endl;
+        cout << "Ð—Ð°Ð¿Ð¸ÑÑŒ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°" << endl;
     }
 }
 
@@ -111,24 +111,24 @@ int main() {
         records[i] = generateRandomRecord(i);
     }
 
-    cout << "Ââåäèòå êîìàíäó:" << endl;
-    cout << "1 - Ñîðòèðîâêà ïî ôàìèëèÿì" << endl;
-    cout << "2 - Ñîðòèðîâêà ïî êîìíàòàì" << endl;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð¼Ð°Ð½Ð´Ñƒ:" << endl;
+    cout << "1 - Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ° Ð¿Ð¾ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑÐ¼" << endl;
+    cout << "2 - Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ° Ð¿Ð¾ ÐºÐ¾Ð¼Ð½Ð°Ñ‚Ð°Ð¼" << endl;
     cout << ">";
     cin >> c;
     if (c == 1) {
         sortBySurname(records, MAX_RECORDS);
-        cout << "Ñîðòèðîâêà ïî ôàìèëèÿì:" << endl;
+        cout << "Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ° Ð¿Ð¾ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑÐ¼:" << endl;
     }
     else if (c == 2) {
         sortByRoomNumber(records, MAX_RECORDS);
-        cout << "Ñîðòèðîâêà ïî êîìíàòàì:" << endl;
+        cout << "Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ° Ð¿Ð¾ ÐºÐ¾Ð¼Ð½Ð°Ñ‚Ð°Ð¼:" << endl;
 
     }
     else {
-        cout << "Íåâåðíîå çíà÷åíèå!" << endl;
+        cout << "ÐÐµÐ²ÐµÑ€Ð½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ!" << endl;
         cout << "..." << endl;
-        cout << "Âûâîä âñåõ çàïèñåé" << endl;
+        cout << "Ð’Ñ‹Ð²Ð¾Ð´ Ð²ÑÐµÑ… Ð·Ð°Ð¿Ð¸ÑÐµÐ¹" << endl;
 
 
     }
@@ -136,10 +136,10 @@ int main() {
         printRecord(records[i]);
     }
 
-    cout << "Ââåäèòå ôàìèëèþ èëè íîìåð êîìíàòû äëÿ ïîèñêà: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ Ð¸Ð»Ð¸ Ð½Ð¾Ð¼ÐµÑ€ ÐºÐ¾Ð¼Ð½Ð°Ñ‚Ñ‹ Ð´Ð»Ñ Ð¿Ð¾Ð¸ÑÐºÐ°: ";
     string searchKey;
     cin >> searchKey;
-    cout << "Ðåçóëüòàòû ïîèñêà:" << endl;
+    cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ñ‹ Ð¿Ð¾Ð¸ÑÐºÐ°:" << endl;
     searchRecord(records, MAX_RECORDS, searchKey);
 
     return 0;
